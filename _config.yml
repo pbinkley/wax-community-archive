@@ -18,7 +18,7 @@
 # Feel free to change these! For more info, refer to:
 # ~> https://jekyllrb.com/docs/configuration/options/
 
-title:            'Edmonton Community Archive'
+title:            'Alberta COVID-19 Community Archive'
 description:      'A Visual Record During the COVID-19 Pandemic'
 url:              'https://minicomp.github.io'
 baseurl:          '/community_archive'
@@ -101,9 +101,9 @@ search:
 # submenu via `sub`.
 
 menu:
-  - label: 'About'
+  - label: 'Contribute'
     sub:
-      - label: 'Wax'
+      - label: 'Digital files'
         link: '/about/'
       - label: 'Documentation'
         link: 'https://minicomp.github.io/wiki/wax/'
@@ -113,8 +113,11 @@ menu:
     link: '/collection/'
   - label: 'Search'
     link: '/search/'
-  - label: 'Reuse'
-    link: '/reuse/'
+  - label: 'About'
+    link: '/about/'
+  - label: 'Credits'
+    link: '/credits/'
+
 
 # --------------------------------------------------------------
 # SITE FOOTER SETTINGS
@@ -123,7 +126,7 @@ menu:
 
 footer:
   links:
-    - label: 'GitHub'
+    - label: 'UAL'
       link: 'https://github.com/minicomp/wax'
     - label: 'Credits'
       link: '/credits'
