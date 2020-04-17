@@ -103,11 +103,11 @@ search:
 menu:
   - label: 'Contribute'
     sub:
-      - label: 'Digital files'
-        link: '/about/'
-      - label: 'Documentation'
-        link: 'https://minicomp.github.io/wiki/wax/'
-      - label: 'Credits'
+      - label: 'digital photographs'
+        link: 'https://drive.google.com/open?id=1I0Qid79N3bfF7ob9FeWXmEpvq7mvgQE-p3E7UaesbsQ'
+      - label: 'paper records'
+        link: 'https://bpsc.library.ualberta.ca/'
+      - label: 'stories'
         link: '/credits/'
   - label: 'Browse'
     link: '/collection/'
@@ -115,8 +115,7 @@ menu:
     link: '/search/'
   - label: 'About'
     link: '/about/'
-  - label: 'Credits'
-    link: '/credits/'
+ 
 
 
 # --------------------------------------------------------------
@@ -126,13 +125,13 @@ menu:
 
 footer:
   links:
-    - label: 'UAL'
-      link: 'https://github.com/minicomp/wax'
+    - label: 'University of Alberta Library'
+      link: 'https://https://www.library.ualberta.ca/'
     - label: 'Credits'
       link: '/credits'
     - label: 'Contact'
-      link: 'https://gitter.im/minicomp/wax/'
+      link: 'mailto:sarah.severson@ualberta.ca'
   logos:
-    - img: '/img/logo.png'
+    - img: '/img/UA-LIB-1C-TINT26.png'
 
 # FIN
