@@ -4,3 +4,8 @@ _site
 .DS_Store
 Gemfile.lock
 package-lock.json
+
+.byebug_history
+.bundle
+_data/community_archive.csv
+_data/raw_images/*
