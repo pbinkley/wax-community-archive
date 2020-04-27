@@ -10,7 +10,7 @@ require 'uri'
 require 'open-uri'
 require 'byebug'
 
-HEADERS = %w(pid timestamp name name_visible terms upload label description _date location license).freeze
+HEADERS = %w[pid timestamp name name_visible terms upload label description _date location license].freeze
 
 JEKYLL_PATH = "#{__dir__}/../".freeze
 STORE_PATH = "#{JEKYLL_PATH}/../community-archive-store".freeze
@@ -82,7 +82,7 @@ class Updater
 
   def process
     # load previous data
-    data = CSV.parse(File.read("#{JEKYLL_PATH}/_data/community_archive.csv"), headers: true)
+    data = CSV.parse(File.read("#{JEKYLL_PATH}/_data/community_archive.csv"), headers: true, write_headers: true, return_headers: true)
     new_row_count = 0
 
     @response.values.each do |row|
