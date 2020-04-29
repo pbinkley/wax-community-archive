@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'geocoder'
 require 'google/apis/sheets_v4'
 require 'google/apis/drive_v2'
 require 'googleauth'
@@ -82,10 +83,40 @@ class Updater
 
   def process
     # load previous data
-    data = CSV.parse(File.read("#{JEKYLL_PATH}/_data/community_archive.csv"), headers: true, write_headers: true, return_headers: true)
+    csvpath = File.file?("#{JEKYLL_PATH}/_data/community_archive.csv") ? "#{JEKYLL_PATH}/_data/community_archive.csv" : "#{JEKYLL_PATH}/_data/community_archive_template.csv"
+    data = CSV.parse(File.read(csvpath), headers: true, write_headers: true, return_headers: true)
+    places = {}
     new_row_count = 0
 
     @response.values.each do |row|
+      # geocode the location
+      location = row[8]
+      puts location
+      result = Geocoder.search("#{location}, Alberta, Canada")
+      if result
+        geo = result.first
+        puts "-> #{geo.place_id} #{geo.display_name}: #{geo.coordinates}"
+        # add place_id as last column
+        row << geo.place_id
+        unless places[geo.place_id]
+          places[geo.place_id] =
+            [geo.place_id,
+             geo.display_name.sub(/, Alberta, Canada$/, ''),
+             geo.coordinates[0],
+             geo.coordinates[1]]
+        end
+      else
+        row << nil # location was not identified, so no place_id
+      end
+
+      # save places
+      CSV.open("#{JEKYLL_PATH}/_data/places.csv", 'wb') do |csv|
+        csv << %w[id name lat lon]
+        places.keys.sort.each do |key|
+          csv << places[key]
+        end
+      end
+
       # extract the pid and put in the first column
       uri = URI.parse(row[4]) # e.g. https://drive.google.com/open?id=19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0
       pid = Hash[URI.decode_www_form(uri.query)]['id']
@@ -109,11 +140,13 @@ class Updater
     return unless new_row_count.nonzero?
 
     # back up existing data file and save new version
-    ts = Time.now.strftime('%Y-%m-%d_%H-%M-%S_%Z')
-    FileUtils.mv(
-      "#{JEKYLL_PATH}/_data/community_archive.csv",
-      "#{STORE_PATH}/archive/community_archive_#{ts}.csv"
-    )
+    if File.file?("#{JEKYLL_PATH}/_data/community_archive.csv")
+      ts = Time.now.strftime('%Y-%m-%d_%H-%M-%S_%Z')
+      FileUtils.mv(
+        "#{JEKYLL_PATH}/_data/community_archive.csv",
+        "#{STORE_PATH}/archive/community_archive_#{ts}.csv"
+      )
+    end
     File.open("#{JEKYLL_PATH}/_data/community_archive.csv", 'w') do |f|
       f << data.to_s
     end

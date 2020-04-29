@@ -5,6 +5,7 @@ gemspec
 
 gem 'byebug'
 gem 'diffy'
+gem 'geocoder'
 gem 'google-api-client'
 gem 'httparty'
 
