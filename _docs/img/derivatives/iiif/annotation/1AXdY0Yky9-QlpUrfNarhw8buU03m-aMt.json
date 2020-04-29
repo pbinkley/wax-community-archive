@@ -1,0 +1,19 @@
+{
+  "@type": "oa:Annotation",
+  "@id": "https://pbinkley.github.io/community_archive/img/derivatives/iiif/annotation/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt.json",
+  "motivation": "sc:painting",
+  "resource": {
+    "@id": "https://pbinkley.github.io/community_archive/img/derivatives/iiif/images/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt/full/full/0/default.jpg",
+    "@type": "dcterms:Image",
+    "format": "image/jpeg",
+    "service": {
+      "@context": "http://iiif.io/api/image/2/context.json",
+      "@id": "https://pbinkley.github.io/community_archive/img/derivatives/iiif/images/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
+      "profile": "http://iiif.io/api/image/2/level0.json"
+    },
+    "width": 960,
+    "height": 960
+  },
+  "on": "https://pbinkley.github.io/community_archive/img/derivatives/iiif/canvas/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt.json",
+  "@context": "http://iiif.io/api/presentation/2/context.json"
+}

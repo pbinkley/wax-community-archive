@@ -1,0 +1,38 @@
+{
+  "@context": "http://iiif.io/api/image/2/context.json",
+  "@id": "https://pbinkley.github.io/community_archive/img/derivatives/iiif/images/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
+  "protocol": "http://iiif.io/api/image",
+  "width": 960,
+  "height": 960,
+  "sizes": [
+    {
+      "width": 960,
+      "height": 960
+    },
+    {
+      "width": 250,
+      "height": 250
+    }
+  ],
+  "profile": [
+    "http://iiif.io/api/image/2/level0.json",
+    {
+      "supports": [
+        "cors",
+        "sizeByWhListed",
+        "baseUriRedirect"
+      ]
+    }
+  ],
+  "tiles": [
+    {
+      "width": 512,
+      "scaleFactors": [
+        1,
+        2,
+        4,
+        8
+      ]
+    }
+  ]
+}
