@@ -11,8 +11,11 @@ description: going to the Garneau Theatre (or metro cinema) was one of my favour
   mass gatherings. I drive by this sign a couple times a week and I appreciate how
   at the bottom they included “Take care of each other”.
 _date: 4/5/2020
-location: Garneau
+location: Garneau, Strathcona, Edmonton
 license: 
+free_location: Garneau
+lat: '53.5196428'
+lon: "-113.5142523"
 order: '0'
 layout: community_archive_item
 collection: community_archive

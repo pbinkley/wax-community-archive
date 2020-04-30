@@ -9,8 +9,11 @@ label: Closed playground
 description: 'Walked by the playground in the Rutherford School playground today.
   It’s sad to see it all wrapped up in caution tape and with the closed sign. '
 _date: 4/6/2020
-location: Bonnie Doon
+location: Bonnie Doon, Edmonton
 license: 
+free_location: Bonnie Doon
+lat: '53.525336550000006'
+lon: "-113.4670455898752"
 order: '1'
 layout: community_archive_item
 collection: community_archive

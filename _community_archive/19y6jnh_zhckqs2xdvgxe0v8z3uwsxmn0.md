@@ -12,8 +12,11 @@ description: 'I took this photo on walk the other day while on a walk to the Mil
   a fun project for a group of children. A day later, someone I didn’t know replied
   to the photo and let me know this was Mia the snow woman. '
 _date: 4/6/2020
-location: Bonnie Doon
+location: Bonnie Doon, Edmonton
 license: 
+free_location: Bonnie Doon
+lat: '53.525336550000006'
+lon: "-113.4670455898752"
 order: '2'
 layout: community_archive_item
 collection: community_archive
