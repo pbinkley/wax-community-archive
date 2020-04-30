@@ -11,7 +11,8 @@ require 'uri'
 require 'open-uri'
 require 'byebug'
 
-HEADERS = %w[pid timestamp name name_visible terms upload label description _date location license].freeze
+HEADERS = %w[pid timestamp name name_visible terms upload label description
+             _date location license free_location lat lon].freeze
 
 JEKYLL_PATH = "#{__dir__}/../".freeze
 STORE_PATH = "#{JEKYLL_PATH}/../community-archive-store".freeze
@@ -89,6 +90,9 @@ class Updater
     new_row_count = 0
 
     @response.values.each do |row|
+      # Google API drops empty cells at the end of the row, which 
+      # affects the license field
+      row << nil while row.count < 10
       # geocode the location
       location = row[8]
       puts location
@@ -96,12 +100,15 @@ class Updater
       if result
         geo = result.first
         puts "-> #{geo.place_id} #{geo.display_name}: #{geo.coordinates}"
-        # add place_id as last column
-        row << geo.place_id
+        # add [user-submitted location, lat, lon] as last columns
+        row += [location, geo.coordinates[0], geo.coordinates[1]]
+        # and use normalized place name for location
+        normalized_location = geo.display_name.sub(/, Alberta, Canada$/, '')
+        row[8] = normalized_location
         unless places[geo.place_id]
           places[geo.place_id] =
             [geo.place_id,
-             geo.display_name.sub(/, Alberta, Canada$/, ''),
+             normalized_location,
              geo.coordinates[0],
              geo.coordinates[1]]
         end
