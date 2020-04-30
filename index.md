@@ -2,8 +2,7 @@
 layout: page
 show_title: false
 banner:
-  collection: community_archive
-  pid: 19y6jnh_zhckqs2xdvgxe0v8z3uwsxmn0
+  image: '/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/full/0/default.jpg'
   y: 25%
   height: '200px'
 ---
