@@ -7,8 +7,4 @@ package-lock.json
 
 .byebug_history
 .bundle
-_data/community_archive.csv
-_data/raw_images/*
-_community_archive
-img/derivatives
 
