@@ -21,7 +21,7 @@
 title:            'Alberta COVID-19 Community Archive'
 description:      'A Visual Record During the COVID-19 Pandemic'
 url:              'https://pbinkley.github.io'
-baseurl:          '/community_archive'
+baseurl:          '/wax-community-archive'
 copyright:        'Example copyright org, 2019'
 logo:             '/assets/logo.png'
 
