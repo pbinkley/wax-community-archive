@@ -113,6 +113,8 @@ menu:
     link: '/collection/'
   - label: 'Search'
     link: '/search/'
+  - label: 'Map'
+    link: '/community_archive/map/'
   - label: 'About'
     link: '/about/'
  
