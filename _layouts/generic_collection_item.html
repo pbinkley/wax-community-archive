@@ -40,27 +40,14 @@ layout: default
   {% include item_metadata.html meta=metadata %}
 {% endif %}
 
-{% comment %}
-  Map
-{% endcomment %}
+{%- capture points -%}
+[{lat: {{ page.lat }}, lng: {{ page.lon }}, count: 1}]
+{%- endcapture -%}
 
-  <div id="mapdiv"></div>
+{%- capture centre -%}
+{{ page.lat }}, {{ page.lon }}
+{%- endcapture -%}
 
-  <script>
-    // initialize Leaflet
-    var map = L.map('mapdiv').setView({lon: {{ page.lon }}, lat: {{ page.lat }}}, 12);
-
-    // add the OpenStreetMap tiles
-    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-      maxZoom: 19,
-      attribution: '&copy; <a href="https://openstreetmap.org/copyright">OpenStreetMap contributors</a>'
-    }).addTo(map);
-
-    // show the scale bar on the lower left corner
-    L.control.scale().addTo(map);
-
-    // show a marker on the map
-    L.marker({lon: {{ page.lon }}, lat: {{ page.lat }}}).bindPopup('The center of the world').addTo(map);
-  </script>
+{% include map.html mapdata=points mapcentre=centre mapzoom=11 mapmax=1 %}
 
 
