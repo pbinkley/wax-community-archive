@@ -2,7 +2,7 @@
   Map
 {% endcomment %}
 
-  <div id="mapdiv"></div>
+  <div id="{{ include.maptype }}"></div>
 
  <script src="{{ '/assets/leaflet/heatmap.min.js' | absolute_url }}"></script>
   <script src="{{ '/assets/leaflet/leaflet-heatmap.js' | absolute_url }}"></script>
@@ -22,7 +22,8 @@
 
         var cfg = {
           // radius should be small ONLY if scaleRadius is true (or small radius is intended)
-          "radius": .01,
+          //"radius": .01,
+          "radius": {{ include.mapradius }},
           "maxOpacity": .5,
           // scales the radius based on map zoom
           "scaleRadius": true,
@@ -41,26 +42,13 @@
 
         var heatmapLayer = new HeatmapOverlay(cfg);
 
-        var map = new L.Map('mapdiv', {
+        var map = new L.Map('{{ include.maptype }}', {
           center: new L.LatLng({{ include.mapcentre }}),
           zoom: {{ include.mapzoom }},
           layers: [baseLayer, heatmapLayer]
         });
 
         heatmapLayer.setData(mapData);
-
-        document.querySelector('.thankyou').onclick = function() {
-          ga('send','event', 'social', 'thanks');
-          document.querySelector('.thankyou').style.display = 'none';
-          document.querySelector('#share').style.display = 'block';
-        };
-        var btns = document.querySelectorAll('.symbol');
-        for (var i = 0; i < btns.length; i++) {
-          btns[i].onclick = function() {
-            ga('send', 'event','social', 'share');
-          };
-        }
-
 
     };
   </script>

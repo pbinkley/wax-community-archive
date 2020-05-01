@@ -105,12 +105,15 @@ class Updater
         # and use normalized place name for location
         normalized_location = geo.display_name.sub(/, Alberta, Canada$/, '')
         row[8] = normalized_location
-        unless places[geo.place_id]
+        if places[geo.place_id]
+          places[geo.place_id][4] += 1
+        else
           places[geo.place_id] =
             [geo.place_id,
              normalized_location,
              geo.coordinates[0],
-             geo.coordinates[1]]
+             geo.coordinates[1],
+             1]
         end
       else
         row << nil # location was not identified, so no place_id
@@ -118,7 +121,7 @@ class Updater
 
       # save places
       CSV.open("#{JEKYLL_PATH}/_data/places.csv", 'wb') do |csv|
-        csv << %w[id name lat lon]
+        csv << %w[id name lat lon count]
         places.keys.sort.each do |key|
           csv << places[key]
         end

@@ -48,6 +48,6 @@ layout: default
 {{ page.lat }}, {{ page.lon }}
 {%- endcapture -%}
 
-{% include map.html mapdata=points mapcentre=centre mapzoom=11 mapmax=1 %}
+{% include map.html maptype="mapdiv" mapdata=points mapcentre=centre mapzoom=11 mapmax=1 mapradius=0.02 %}
 
 
