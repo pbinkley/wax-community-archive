@@ -1,0 +1,34 @@
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/collection/community_archive.json",
+  "@type": "sc:Collection",
+  "label": "community_archive",
+  "manifests": [
+    {
+      "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN/manifest.json",
+      "@type": "sc:Manifest",
+      "thumbnail": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/images/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN/full/250,/0/default.jpg",
+      "label": "1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN"
+    },
+    {
+      "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_"
+    },
+    {
+      "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt"
+    },
+    {
+      "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB"
+    },
+    {
+      "@id": "https://pbinkley.github.io/wax-community-archive/img/derivatives/iiif/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0"
+    }
+  ]
+}
