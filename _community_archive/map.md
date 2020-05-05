@@ -10,7 +10,7 @@ Adapted from https://www.patrick-wied.at/static/heatmapjs/example-heatmap-leafle
 {%- capture points -%}
   [
     {% for place in site.data.places %}
-      {lat: {{ place.lat }}, lng: {{ place.lon }}, value: {{ place.count }}}
+      {lat: {{ place.lat }}, lng: {{ place.lon }}, value: {{ place.count }}, name: '{{ place.name | strip | escape }}', slug: '{{ place.name | strip | slugify }}'}
       {% if forloop.index != forloop.length %},{% endif %}
     {% endfor %}
   ]

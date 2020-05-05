@@ -30,6 +30,14 @@ window.onload = function() {
           // which field name in your data represents the data value - default "value"
          valueField: 'value'
         };
+
+        var markers = []
+        testData.data.forEach(function (item, index) {
+          <!-- TODO: develop target that uses the fragment to select images -->
+          markers.push(L.marker([item['lat'], item['lng']]).bindPopup('<a href="../../#' + item['slug'] + '">' + item['name'] + '</a>'));
+        });
+        var markerGroup = L.layerGroup(markers);
+
         var heatmapLayer = new HeatmapOverlay(cfg);
         var map = new L.Map('{{ include.maptype }}', {
           center: new L.LatLng({{ include.mapcentre }}),
@@ -37,6 +45,17 @@ window.onload = function() {
           layers: [baseLayer, heatmapLayer]
         });
         heatmapLayer.setData(testData);
+
+        // Attach map zoom handler
+        map.on('zoomend', function (e) {
+          // Check zoom level
+          if (map.getZoom() > 11) {
+            map.addLayer(markerGroup);
+          } else {
+            map.removeLayer(markerGroup);        
+          }
+        });
+
         // make accessible for debugging
         layer = heatmapLayer;
       };
