@@ -1,0 +1,6 @@
+---
+layout: none
+parmalink: /site.json
+---
+
+{{ site | jsonify }}
