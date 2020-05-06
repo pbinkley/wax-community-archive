@@ -3,7 +3,6 @@
 {% if include.only and include.facet_by %}
   {% assign subset = collection | where: include.facet_by, include.only | sort: 'order' %}
 {% endif %}
-<link rel='stylesheet' href="{{ '/assets/infinite-scroll/infinite-scroll.css' | absolute_url }}">
 
 <div id='wax-gallery-{{ include.collection }}-container' class='wax-gallery-container full-width'>
   <div class='wax-inline-container'>
