@@ -2,10 +2,9 @@
 layout: page
 show_title: false
 banner:
-  image: '/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/full/0/default.jpg'
+  image: "/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/full/0/default.jpg"
   y: 25%
-  height: '200px'
-slice: 4
+  height: 200px
 page_num: 3
 ---
 

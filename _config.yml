@@ -25,6 +25,8 @@ baseurl:          '/wax-community-archive'
 copyright:        'Example copyright org, 2019'
 logo:             '/assets/logo.png'
 
+pageworth:         2 # number of images per page of paginated browsing
+
 # ---------------------------------------------------------------
 # BUILD SETTINGS
 # ---------------------------------------------------------------
