@@ -1,0 +1,65 @@
+---
+layout: none
+---
+[
+  {
+    "pid": "1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_",
+    "name": "Sarah Severson ",
+    "label": "Closed playground",
+    "_date": "4/6/2020",
+    "location": "Bonnie Doon, Edmonton",
+    "collection": "community_archive",
+    "thumbnail": "/img/derivatives/iiif/images/1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_/full/250,/0/default.jpg",
+    "permalink": "/community_archive/1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_",
+    "lunr_id": 0
+  },
+  {
+    "pid": "1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN",
+    "name": "Sarah",
+    "label": "Quarantine craft projects",
+    "_date": "4/10/2020",
+    "location": "Bonnie Doon, Edmonton",
+    "collection": "community_archive",
+    "thumbnail": "/img/derivatives/iiif/images/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN/full/250,/0/default.jpg",
+    "permalink": "/community_archive/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN",
+    "lunr_id": 1
+  },
+  {
+    "pid": "19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0",
+    "name": "Sarah Severson ",
+    "label": "Mia the snow woman in the front yard",
+    "_date": "4/6/2020",
+    "location": "Bonnie Doon, Edmonton",
+    "collection": "community_archive",
+    "thumbnail": "/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/250,/0/default.jpg",
+    "permalink": "/community_archive/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0",
+    "lunr_id": 2
+  },
+  {
+    "pid": "1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB",
+    "name": "Sarah",
+    "label": "Marquee of the Garneau Theatre saying it’s closed",
+    "_date": "4/5/2020",
+    "location": "Garneau, Strathcona, Edmonton",
+    "collection": "community_archive",
+    "thumbnail": "/img/derivatives/iiif/images/1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB/full/250,/0/default.jpg",
+    "permalink": "/community_archive/1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB",
+    "lunr_id": 3
+  },
+  {
+    "pid": "1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
+    "name": "Peter Binkley",
+    "label": "Rainbow in the Deli Counter",
+    "_date": "4/21/2020",
+    "location": "Millbourne, Mill Woods, Edmonton",
+    "collection": "community_archive",
+    "thumbnail": "/img/derivatives/iiif/images/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt/full/250,/0/default.jpg",
+    "permalink": "/community_archive/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
+    "lunr_id": 4
+  },
+  {
+    "title": "Alberta",
+    "permalink": "/community_archive/",
+    "lunr_id": 5
+  }
+]
