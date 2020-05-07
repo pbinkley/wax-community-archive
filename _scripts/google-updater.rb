@@ -11,8 +11,9 @@ require 'uri'
 require 'open-uri'
 require 'byebug'
 
-HEADERS = %w[pid timestamp name name_visible terms upload label description
+INPUT_HEADERS = %w[timestamp name name_visible terms upload label description
              _date location license free_location lat lon].freeze
+HEADERS = (%w[pid] + INPUT_HEADERS).freeze
 
 JEKYLL_PATH = "#{__dir__}/../".freeze
 STORE_PATH = "#{JEKYLL_PATH}/../community-archive-store".freeze
@@ -85,26 +86,32 @@ class Updater
   def process
     # load previous data
     csvpath = File.file?("#{JEKYLL_PATH}/_data/community_archive.csv") ? "#{JEKYLL_PATH}/_data/community_archive.csv" : "#{JEKYLL_PATH}/_data/community_archive_template.csv"
-    data = CSV.parse(File.read(csvpath), headers: true, write_headers: true, return_headers: true)
+    # data = CSV.parse(File.read(csvpath), headers: true, write_headers: true, return_headers: true)
+    data = CSV.parse(File.read(csvpath), headers: true)
     places = {}
     new_row_count = 0
 
     @response.values.each do |row|
-      # Google API drops empty cells at the end of the row, which 
-      # affects the license field
-      row << nil while row.count < 10
+      newrow = CSV::Row.new(INPUT_HEADERS, row)
+
+      # parse the timestamp
+      newrow['timestamp'] = Time.strptime("#{newrow['timestamp']} Canada/Edmonton", '%m/%d/%Y %H:%M:%S %Z').to_s
+
       # geocode the location
-      location = row[8]
+      location = newrow['location']
       puts location
       result = Geocoder.search("#{location}, Alberta, Canada")
       if result
         geo = result.first
         puts "-> #{geo.place_id} #{geo.display_name}: #{geo.coordinates}"
         # add [user-submitted location, lat, lon] as last columns
-        row += [location, geo.coordinates[0], geo.coordinates[1]]
+        newrow['free_location'] = location
+        newrow['lat'] = geo.coordinates[0]
+        newrow['lon'] = geo.coordinates[1]
+
         # and use normalized place name for location
         normalized_location = geo.display_name.sub(/, Alberta, Canada$/, '')
-        row[8] = normalized_location
+        newrow['location'] = normalized_location
         if places[geo.place_id]
           places[geo.place_id][4] += 1
         else
@@ -115,21 +122,12 @@ class Updater
              geo.coordinates[1],
              1]
         end
-      else
-        row << nil # location was not identified, so no place_id
-      end
-
-      # save places
-      CSV.open("#{JEKYLL_PATH}/_data/places.csv", 'wb') do |csv|
-        csv << %w[id name lat lon count]
-        places.keys.sort.each do |key|
-          csv << places[key]
-        end
       end
 
       # extract the pid and put in the first column
       uri = URI.parse(row[4]) # e.g. https://drive.google.com/open?id=19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0
       pid = Hash[URI.decode_www_form(uri.query)]['id']
+      newrow['pid'] = pid
 
       # download image, unless it already exists
       filename = "#{JEKYLL_PATH}/_data/raw_images/community_archive/#{pid}.jpeg"
@@ -141,13 +139,21 @@ class Updater
       # create new data row, unless it already exists
       old_row = data.find { |row| row['pid'] == pid }
       unless old_row
-        data << [pid] + row
+        data << newrow
         new_row_count += 1
       end
     end
 
+    # save places
+    CSV.open("#{JEKYLL_PATH}/_data/places.csv", 'wb') do |csv|
+      csv << %w[id name lat lon count]
+      places.keys.sort.each do |key|
+        csv << places[key]
+      end
+    end
+
     puts "New rows: #{new_row_count}"
-    return unless new_row_count.nonzero?
+    return unless new_row_count.nonzero?    
 
     # back up existing data file and save new version
     if File.file?("#{JEKYLL_PATH}/_data/community_archive.csv")
@@ -157,8 +163,12 @@ class Updater
         "#{STORE_PATH}/archive/community_archive_#{ts}.csv"
       )
     end
-    File.open("#{JEKYLL_PATH}/_data/community_archive.csv", 'w') do |f|
-      f << data.to_s
+
+    CSV.open("#{JEKYLL_PATH}/_data/community_archive.csv", 'w') do |f|
+      f << data.headers
+      data.each do |row|
+        f << row
+      end
     end
     puts 'Saved _data/community_archive.csv'
   end
