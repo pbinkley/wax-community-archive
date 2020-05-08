@@ -1,5 +1,6 @@
 #!/usr/bin/env ruby
 
+require 'active_support/inflector'
 require 'geocoder'
 require 'google/apis/sheets_v4'
 require 'google/apis/drive_v2'
@@ -12,7 +13,7 @@ require 'open-uri'
 require 'byebug'
 
 INPUT_HEADERS = %w[timestamp name name_visible terms upload label description
-             _date location license free_location lat lon].freeze
+             _date location location_slug license free_location lat lon].freeze
 HEADERS = (%w[pid] + INPUT_HEADERS).freeze
 
 JEKYLL_PATH = "#{__dir__}/../".freeze
@@ -112,12 +113,15 @@ class Updater
         # and use normalized place name for location
         normalized_location = geo.display_name.sub(/, Alberta, Canada$/, '')
         newrow['location'] = normalized_location
+        slug = ActiveSupport::Inflector::parameterize(normalized_location)
+        newrow['location_slug'] = slug
         if places[geo.place_id]
           places[geo.place_id][4] += 1
         else
           places[geo.place_id] =
             [geo.place_id,
              normalized_location,
+             slug,
              geo.coordinates[0],
              geo.coordinates[1],
              1]
@@ -146,7 +150,7 @@ class Updater
 
     # save places
     CSV.open("#{JEKYLL_PATH}/_data/places.csv", 'wb') do |csv|
-      csv << %w[id name lat lon count]
+      csv << %w[id name slug lat lon count]
       places.keys.sort.each do |key|
         csv << places[key]
       end

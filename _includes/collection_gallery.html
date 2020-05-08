@@ -12,12 +12,16 @@
     <div class="grid are-images-unloaded">
       <div class="grid__col-sizer"></div>
       <div class="grid__gutter-sizer"></div>
-
       {% capture page_num %}{{ page.page_num | to_integer }}{% endcapture %}
       {% capture pageworth %}{{ site.pageworth | to_integer }}{% endcapture %}
       {% capture slice_start %}{{ page_num | minus: 1 | times: pageworth }}{% endcapture %}
 
-      {% assign this_slice = site.data.community_archive | slice: slice_start, pageworth %}
+      {% if page.location.slug == 'bonnie-doon-edmonton' %}
+        {% assign this_slice = site.data.community_archive | where: "location_slug", page.location.slug | slice: slice_start, pageworth %}
+      {% else %}
+        {% assign this_slice = site.data.community_archive | slice: slice_start, pageworth %}
+      {% endif %}
+
       {% for image in this_slice %}
         <div class="grid__item">
           <a href="{{ site.baseurl }}/community_archive/{{ image.pid | downcase }}/">
@@ -31,7 +35,7 @@
 
     <p class="pagination">
       {% capture next_page %}{{ page.page_num | to_integer | plus: 1 }}{% endcapture %}
-      <a class="pagination__next" href="{{ 'page' | append: next_page | absolute_url }}/">Next page</a>
+      <a class="pagination__next" href="{{ page.pagination_prefix | append: next_page | absolute_url }}/">Next page</a>
     </p>
 
   </div>

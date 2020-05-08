@@ -1,4 +1,4 @@
-id,name,lat,lon,count
-236304244,"Garneau, Strathcona, Edmonton",53.5196428,-113.5142523,1
-236469316,"Bonnie Doon, Edmonton",53.525336550000006,-113.4670455898752,3
-236567676,"Millbourne, Mill Woods, Edmonton",53.4747562,-113.4516548,1
+id,name,slug,lat,lon,count
+236304244,"Garneau, Strathcona, Edmonton",garneau-strathcona-edmonton,53.5196428,-113.5142523,1
+236469316,"Bonnie Doon, Edmonton",bonnie-doon-edmonton,53.525336550000006,-111.4670455898752,1
+236567676,"Millbourne, Mill Woods, Edmonton",millbourne-mill-woods-edmonton,53.4747562,-113.4516548,1
