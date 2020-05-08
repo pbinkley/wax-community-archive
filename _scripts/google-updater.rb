@@ -116,7 +116,7 @@ class Updater
         slug = ActiveSupport::Inflector::parameterize(normalized_location)
         newrow['location_slug'] = slug
         if places[geo.place_id]
-          places[geo.place_id][4] += 1
+          places[geo.place_id][5] += 1
         else
           places[geo.place_id] =
             [geo.place_id,

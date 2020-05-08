@@ -2,6 +2,8 @@
 
 require 'json'
 require 'yaml'
+require 'csv'
+require 'fileutils'
 require 'byebug'
 
 JEKYLL_PATH = "#{__dir__}/../".freeze
@@ -12,14 +14,24 @@ JEKYLL_PATH = "#{__dir__}/../".freeze
 
 # TODO: convert this into a rake task
 
+def count_pages(image_count)
+  (image_count/@config['pageworth'].to_f).ceil
+end
+
+def write_md(filename, yaml, text)
+  File.open(filename, 'w') do |f|
+    f.write("#{yaml.to_yaml}---\n#{text}")
+  end
+end
+
 # read Wax config
-config = YAML.load_file("#{JEKYLL_PATH}_config.yml")
+@config = YAML.load_file("#{JEKYLL_PATH}_config.yml")
 
 # determine number of images, from csv (subtracting one for the header row)
 File.foreach(JEKYLL_PATH + '_data/community_archive.csv') {}
 image_count = $. - 1
 
-page_count = (image_count/config['pageworth'].to_f).ceil
+page_count = count_pages(image_count)
 
 # delete old page files, in case the number has gone down
 Dir.glob("#{JEKYLL_PATH}page*.md").each { |f| File.delete(f) }
@@ -34,8 +46,51 @@ if page_count > 1
     page_header = header.dup
     page_header['page_num'] = p
 
-    File.open("#{JEKYLL_PATH}page#{p}.md", 'w') do |f|
-      f.write("#{page_header.to_yaml}---\n#{index_text}")
-    end
+    write_md("#{JEKYLL_PATH}page#{p}.md", page_header.to_yaml, index_text)
+
   end
+end
+
+# location facet pages
+places = CSV.read("#{JEKYLL_PATH}_data/places.csv", headers: true)
+
+# delete old facet files
+target_dir = "#{JEKYLL_PATH}/locations"
+FileUtils.rm_rf(target_dir)
+FileUtils.mkdir(target_dir)
+
+# generate new files. The text doesn't change, the yaml does.
+
+facet_text = '{% include collection_gallery.html collection=\'community_archive\' %}'
+
+places.each do |place|
+  facet_dir = "locations/#{place['slug']}"
+  yaml = {
+           'layout' => 'page', 
+           'show_title' => true, 
+           'title' => place['name'], 
+           'location' => place.to_hash,
+           'pagination_prefix' => "#{facet_dir}/page"
+         }
+  FileUtils.mkdir(facet_dir)
+
+  facet_file = "#{facet_dir}/index.md"
+  facet_yaml = yaml.dup
+  facet_yaml['page_num'] = 1
+
+  # write main page for this facet
+  write_md(facet_file, facet_yaml, facet_text)
+
+  # write paginated pages
+  puts "#{place['name']}: #{place['count']}"
+  page_count = count_pages(place['count'].to_i)
+
+  (2..page_count).each do |p|
+    facet_yaml = yaml.dup
+    facet_yaml['page_num'] = p
+
+    write_md("#{facet_dir}/page#{p}.md", facet_yaml, facet_text)
+
+  end
+
 end
