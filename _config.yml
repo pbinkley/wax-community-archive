@@ -18,12 +18,12 @@
 # Feel free to change these! For more info, refer to:
 # ~> https://jekyllrb.com/docs/configuration/options/
 
-title:            'Alberta COVID-19 Community Archive'
-description:      'A Visual Record During the COVID-19 Pandemic'
+title:            '/img/UA-LIBR-COLOUR.png Alberta COVID-19 Community Archive'
+description:      'A Visual Record of Alberta During the COVID-19 Pandemic'
 url:              'https://pbinkley.github.io'
 baseurl:          '/wax-community-archive'
-copyright:        'Example copyright org, 2019'
-logo:             '/assets/logo.png'
+copyright:        ''/img/cc-by-nc-sa.png This work is subject to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license
+logo:             '/img/UA-LIBR-COLOUR.png'
 
 pageworth:         2 # number of images per page of paginated browsing
 
@@ -104,22 +104,12 @@ search:
 
 menu:
   - label: 'Contribute'
-    sub:
-      - label: 'digital photographs'
-        link: 'https://drive.google.com/open?id=1I0Qid79N3bfF7ob9FeWXmEpvq7mvgQE-p3E7UaesbsQ'
-      - label: 'paper records'
-        link: 'https://bpsc.library.ualberta.ca/'
-      - label: 'stories'
-        link: '/credits/'
-  - label: 'Browse'
-    link: '/collection/'
+    link: '/contribute/'
+  - label: 'Browse by Map'
+    link: '/community_archive/map/'
   - label: 'Search'
     link: '/search/'
-  - label: 'Map'
-    link: '/community_archive/map/'
-  - label: 'About'
-    link: '/about/'
- 
+
 
 
 # --------------------------------------------------------------
@@ -128,14 +118,14 @@ menu:
 #
 
 footer:
-  links:
-    - label: 'University of Alberta Library'
-      link: 'https://https://www.library.ualberta.ca/'
-    - label: 'Credits'
-      link: '/credits'
+    - label: 'About'
+      link: '/about'
+    - label: 'Policies'
+      link: '/policies'
     - label: 'Contact'
       link: 'mailto:sarah.severson@ualberta.ca'
   logos:
-    - img: '/img/UA-LIB-1C-TINT26.png'
+    - img: '/img/UA-LIBR-COLOUR.png'
+      link: 'https://https://www.library.ualberta.ca/'
 
 # FIN

@@ -2,21 +2,19 @@
 layout: page
 show_title: false
 banner:
-  image: '/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/full/0/default.jpg'
+  image: '/img/p22007coll10_230_full.jpg'
   y: 25%
   height: '200px'
 page_num: 1
 ---
 
-_Placeholder for text about the Alberta COVID-19 community archive project. Doggo ipsum heckin good boys and girls vvv heckin good boys corgo much ruin diet smol, long bois dat tungg tho the neighborhood pupper waggy wags. Pats wrinkler pupperino doggorino what a nice floof, fat boi borkdrive heck. Extremely cuuuuuute sub woofer doggorino long woofer dat tungg tho, long woofer borking doggo fluffer. Lotsa pats wrinkler long woofer h*ck, shooberino. Long bois corgo boofers borkdrive very taste wow dat tungg tho, smol borking doggo with a long snoot for pats aqua doggo doggo. What a nice floof sub woofer wow very biscit, super chub. Puggo I am bekom fat bork borkf porgo, length boy floofs noodle horse. Floofs heckin good boys and girls smol, many pats._
+It is not often that we can look around and recognize that an important historical event is unfolding before us. In reaction so many of us are taking pictures to document these strange times and sharing these online are fleeting.
 
-_Invitation for people to contribute with links to the forms._ 
-
-### Browse the Collection by location
-
-{% include collection_gallery.html facet_by='location' collection='community_archive' %}
+The University of Alberta Library wants to collect and preserve these community stories that  document the impact of the COVID-19 pandemic in Alberta for future generations and we need your help. By contributing your photographs, videos, and audio stories to this community collection you’ll be able share your experiences with your neighbours while also contributing to the historic record.
 
 
+_Invitation for people to contribute with links to the forms._
 
+### See what has already been collected
 
-
+{% include collection_gallery.html collection='community_archive' %}

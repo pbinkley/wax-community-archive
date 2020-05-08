@@ -1,19 +1,16 @@
 ---
 layout: page
-title: What is Wax?
+title: What is Alberta COVID-19 community archive
 permalink: /about/
 ---
 
-About the project 
+**What is the Alberta COVID-19 community archive?**
+Launched in May 2020, the Alberta COVID-19 community archive was inspired by Brock University Library Niagara Archive and other Libraries and Archives initiatives to capture this historic moment in time.
 
+We see this collection as a natural extension of our Peel Prairie Provinces digital collection, a research resource dedicated to the history and culture of Canadian Prairies. This research collection would provide future scholars an important view on how Alberta was impacted by the pandemic. By allowing for a more community driven approach to collecting, we’re hoping to provide an alternative view to what is being captured in institutional archives and the media.  
 
-
-
-
-
-
-
-About the technology 
+**About the technology behind the website**
+We chose to build the Alberta COVID-19 community archive using the Wax framework in order to maximize transparency and flexibility.
 
 **Wax helps you create digital exhibits.**   
 A digital exhibit is a collection of curated cultural artifacts—manuscripts, paintings, photographs, sculptures, etc—often accompanied by an explicit narrative or argument. Though Wax focuses on images and text, it could be used for sound or video collections with some customization.
@@ -57,3 +54,11 @@ From there, you can run tests on your site to catch errors and decide where and 
 <a href="{{ '/img/wax_workflow.jpg' | absolute_url }}">
   <img src="{{ '/img/wax_workflow.jpg' | absolute_url }}"/>
 </a>
+
+**Credits**
+
+Wax is a minimal computing ([minicomp](https://github.com/minicomp)) project led by [Marii Nyröp](http://marii.info/). The project is currently maintained by Marii Nyröp and [Alex Gil](https://github.com/elotroalex) at Columbia University Libraries. It uses open source libraries and frameworks including [Jekyll](https://jekyllrb.com), [IIIF](http://iiif.io), [OpenSeaDragon](https://openseadragon.github.io/), [Rake](https://ruby.github.io/rake/), and [ElasticLunr](http://elasticlunr.com/). Wax builds upon work by [Peter Binkley](https://github.com/pbinkley), [David Newbury](https://github.com/workergnome), and others.
+
+We welcome and encourage contributors and maintainers. Please get in touch, or [fork the project on GitHub](https://github.com/minicomp/wax). If you encounter any issue with the software, please [create an issue](https://github.com/minicomp/wax/issues) on our repository or post a comment on [Gitter](https://gitter.im/minicomp/wax/).
+
+For more on working with Wax, visit our [documentation wiki](https://minicomp.github.io/wiki/wax/).
