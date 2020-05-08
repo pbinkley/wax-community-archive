@@ -12,7 +12,6 @@ It is not often that we can look around and recognize that an important historic
 
 The University of Alberta Library wants to collect and preserve these community stories that  document the impact of the COVID-19 pandemic in Alberta for future generations and we need your help. By contributing your photographs, videos, and audio stories to this community collection you’ll be able share your experiences with your neighbours while also contributing to the historic record.
 
-
 _Invitation for people to contribute with links to the forms._
 
 ### See what has already been collected
