@@ -22,7 +22,7 @@ title:            'Alberta COVID-19 Community Archive'
 description:      'A Visual Record of Alberta During the COVID-19 Pandemic'
 url:              'https://pbinkley.github.io'
 baseurl:          '/wax-community-archive'
-copyright:        '/img/cc-by-nc-sa.png' 'This work is subject to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license'
+copyright:        'This work is subject to a Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International license'
 logo:             '/img/UA-LIBR-COLOUR.png'
 
 pageworth:         2 # number of images per page of paginated browsing
