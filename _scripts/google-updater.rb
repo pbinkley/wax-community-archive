@@ -166,7 +166,8 @@ class Updater
 
     CSV.open("#{JEKYLL_PATH}/_data/community_archive.csv", 'w') do |f|
       f << data.headers
-      data.each do |row|
+      # sort rows by timestamp, descending
+      data.sort { |a, b| b['timestamp'] <=> a['timestamp']}.each do |row|
         f << row
       end
     end
