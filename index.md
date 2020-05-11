@@ -14,6 +14,5 @@ The University of Alberta Library wants to collect and preserve these community 
 
 _Invitation for people to contribute with links to the forms._
 
-### See what has already been collected
-
+### See what has already been shared
 {% include collection_gallery.html collection='community_archive' %}
