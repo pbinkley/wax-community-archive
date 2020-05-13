@@ -3,6 +3,17 @@ layout: none
 ---
 [
   {
+    "name": "Sarah",
+    "label": "To-go coffee cup lids laid out at the local cafe",
+    "_date": "5/9/2020",
+    "location": "Garneau, Strathcona, Edmonton",
+    "pid": "1yBsKjFGnReyTKS4D51DDFmZm8P5Tic34",
+    "collection": "community_archive",
+    "thumbnail": null,
+    "permalink": "/community_archive/1yBsKjFGnReyTKS4D51DDFmZm8P5Tic34",
+    "lunr_id": 0
+  },
+  {
     "pid": "1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_",
     "name": "Sarah Severson ",
     "label": "Closed playground",
@@ -11,7 +22,7 @@ layout: none
     "collection": "community_archive",
     "thumbnail": "/img/derivatives/iiif/images/1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_/full/250,/0/default.jpg",
     "permalink": "/community_archive/1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_",
-    "lunr_id": 0
+    "lunr_id": 1
   },
   {
     "pid": "1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN",
@@ -22,7 +33,7 @@ layout: none
     "collection": "community_archive",
     "thumbnail": "/img/derivatives/iiif/images/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN/full/250,/0/default.jpg",
     "permalink": "/community_archive/1y74fx6tnk-z_pYcdPa5nLM0tuHbwDGjN",
-    "lunr_id": 1
+    "lunr_id": 2
   },
   {
     "pid": "19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0",
@@ -33,7 +44,18 @@ layout: none
     "collection": "community_archive",
     "thumbnail": "/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/250,/0/default.jpg",
     "permalink": "/community_archive/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0",
-    "lunr_id": 2
+    "lunr_id": 3
+  },
+  {
+    "name": "Sarah Severson",
+    "label": "6ft apart chalk sign for curbside pick-up ",
+    "_date": "5/10/2020",
+    "location": "Clareview, Edmonton",
+    "pid": "1EsLVcp9pA_JX-p3KqmLgBUZtzGUrVr9D",
+    "collection": "community_archive",
+    "thumbnail": null,
+    "permalink": "/community_archive/1EsLVcp9pA_JX-p3KqmLgBUZtzGUrVr9D",
+    "lunr_id": 4
   },
   {
     "pid": "1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB",
@@ -44,7 +66,7 @@ layout: none
     "collection": "community_archive",
     "thumbnail": "/img/derivatives/iiif/images/1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB/full/250,/0/default.jpg",
     "permalink": "/community_archive/1nvqh5yod4JUUaZQxZhX9vGY-9DCXgYvB",
-    "lunr_id": 3
+    "lunr_id": 5
   },
   {
     "pid": "1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
@@ -55,11 +77,22 @@ layout: none
     "collection": "community_archive",
     "thumbnail": "/img/derivatives/iiif/images/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt/full/250,/0/default.jpg",
     "permalink": "/community_archive/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt",
-    "lunr_id": 4
+    "lunr_id": 6
+  },
+  {
+    "name": "Sarah",
+    "label": "Social Distancing sticker on the floor",
+    "_date": "5/10/2020",
+    "location": "Capilano, Greater Hardisty, Edmonton, Alberta, T6A 1P5, Canada",
+    "pid": "10xXNmitWesKpGT7U2dCeD-e4U-oz3nck",
+    "collection": "community_archive",
+    "thumbnail": null,
+    "permalink": "/community_archive/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck",
+    "lunr_id": 7
   },
   {
     "title": "Alberta",
     "permalink": "/community_archive/",
-    "lunr_id": 5
+    "lunr_id": 8
   }
 ]

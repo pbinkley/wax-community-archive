@@ -1,0 +1,49 @@
+---
+layout: none
+---
+{
+  "@context": "http://iiif.io/api/presentation/2/context.json",
+  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/manifest.json",
+  "@type": "sc:Manifest",
+  "label": "10xXNmitWesKpGT7U2dCeD-e4U-oz3nck",
+  "thumbnail": "{{ '/' | absolute_url }}img/derivatives/iiif/images/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/full/250,/0/default.jpg",
+  "viewingDirection": "left-to-right",
+  "viewingHint": "individuals",
+  "sequences": [
+    {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/sequence/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck.json",
+      "@type": "sc:Sequence",
+      "canvases": [
+        {
+          "@type": "sc:Canvas",
+          "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/canvas/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck.json",
+          "label": "front",
+          "width": 4032,
+          "height": 3024,
+          "thumbnail": "{{ '/' | absolute_url }}img/derivatives/iiif/images/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/full/250,/0/default.jpg",
+          "images": [
+            {
+              "@type": "oa:Annotation",
+              "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/annotation/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck.json",
+              "motivation": "sc:painting",
+              "resource": {
+                "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/full/full/0/default.jpg",
+                "@type": "dcterms:Image",
+                "format": "image/jpeg",
+                "service": {
+                  "@context": "http://iiif.io/api/image/2/context.json",
+                  "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/images/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck",
+                  "profile": "http://iiif.io/api/image/2/level0.json"
+                },
+                "width": 4032,
+                "height": 3024
+              },
+              "on": "{{ '/' | absolute_url }}img/derivatives/iiif/canvas/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck.json"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "full": "{{ '/' | absolute_url }}img/derivatives/iiif/images/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/full/full/0/default.jpg"
+}

@@ -18,6 +18,21 @@ layout: none
       "label": "1RcOwpu9czNtDyVRsYtlVKVrM1zh58dN_"
     },
     {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/10xXNmitWesKpGT7U2dCeD-e4U-oz3nck/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "10xXNmitWesKpGT7U2dCeD-e4U-oz3nck"
+    },
+    {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/1EsLVcp9pA_JX-p3KqmLgBUZtzGUrVr9D/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "1EsLVcp9pA_JX-p3KqmLgBUZtzGUrVr9D"
+    },
+    {
+      "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/1yBsKjFGnReyTKS4D51DDFmZm8P5Tic34/manifest.json",
+      "@type": "sc:Manifest",
+      "label": "1yBsKjFGnReyTKS4D51DDFmZm8P5Tic34"
+    },
+    {
       "@id": "{{ '/' | absolute_url }}img/derivatives/iiif/1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt/manifest.json",
       "@type": "sc:Manifest",
       "label": "1AXdY0Yky9-QlpUrfNarhw8buU03m-aMt"
