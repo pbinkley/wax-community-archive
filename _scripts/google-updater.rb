@@ -170,9 +170,12 @@ class Updater
 
     CSV.open("#{JEKYLL_PATH}/_data/community_archive.csv", 'w') do |f|
       f << data.headers
-      # sort rows by timestamp, descending
+      # sort rows by timestamp, descending; set order field
+      order = 0
       data.sort { |a, b| b['timestamp'] <=> a['timestamp']}.each do |row|
+        row['order'] = order
         f << row
+        order += 1
       end
     end
     puts 'Saved _data/community_archive.csv'
