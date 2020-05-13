@@ -34,7 +34,7 @@ image_count = $. - 1
 page_count = count_pages(image_count)
 
 # delete old page files, in case the number has gone down
-Dir.glob("#{JEKYLL_PATH}page*.md").each { |f| File.delete(f) }
+Dir.glob("#{JEKYLL_PATH}browse/main/page*.md").each { |f| File.delete(f) }
 
 if page_count > 1
   index_md = File.read("#{JEKYLL_PATH}index.md")
@@ -46,7 +46,7 @@ if page_count > 1
     page_header = header.dup
     page_header['page_num'] = p
 
-    write_md("#{JEKYLL_PATH}page#{p}.md", page_header.to_yaml, index_text)
+    write_md("#{JEKYLL_PATH}/browse/main/page#{p}.md", page_header, index_text)
 
   end
 end
@@ -55,16 +55,14 @@ end
 places = CSV.read("#{JEKYLL_PATH}_data/places.csv", headers: true)
 
 # delete old facet files
-target_dir = "#{JEKYLL_PATH}/locations"
+target_dir = "#{JEKYLL_PATH}/browse/locations"
 FileUtils.rm_rf(target_dir)
 FileUtils.mkdir(target_dir)
 
-# generate new files. The text doesn't change, the yaml does.
-
-facet_text = '{% include collection_gallery.html collection=\'community_archive\' %}'
+# generate new files. The text content doesn't change, the yaml header does.
 
 places.each do |place|
-  facet_dir = "locations/#{place['slug']}"
+  facet_dir = "browse/locations/#{place['slug']}"
   yaml = {
            'layout' => 'page', 
            'show_title' => true, 
@@ -77,6 +75,8 @@ places.each do |place|
   facet_file = "#{facet_dir}/index.md"
   facet_yaml = yaml.dup
   facet_yaml['page_num'] = 1
+  points = "[{lat: #{place['lat']}, lng: #{place['lon']}, value: #{place['count']}, name: \\'#{place['name']}\\', slug: \\'#{place['slug']}\\'}]"
+  facet_text = "{% include map.html maptype='mapdiv' mapdata='#{points}' mapcentre='#{place['lat']},#{place['lon']}' mapzoom=11 mapmax=1 mapradius=0.02 %}\n\n{% include collection_gallery.html collection='community_archive' %}"
 
   # write main page for this facet
   write_md(facet_file, facet_yaml, facet_text)

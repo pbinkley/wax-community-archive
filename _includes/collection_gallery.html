@@ -16,7 +16,7 @@
       {% capture pageworth %}{{ site.pageworth | to_integer }}{% endcapture %}
       {% capture slice_start %}{{ page_num | minus: 1 | times: pageworth }}{% endcapture %}
 
-      {% if page.location.slug == 'bonnie-doon-edmonton' %}
+      {% if page.location %}
         {% assign this_slice = site.data.community_archive | where: "location_slug", page.location.slug | slice: slice_start, pageworth %}
       {% else %}
         {% assign this_slice = site.data.community_archive | slice: slice_start, pageworth %}

@@ -34,7 +34,7 @@ window.onload = function() {
         var markers = []
         testData.data.forEach(function (item, index) {
           <!-- TODO: develop target that uses the fragment to select images -->
-          markers.push(L.marker([item['lat'], item['lng']]).bindPopup('<a href="../../#' + item['slug'] + '">' + item['name'] + '</a>'));
+          markers.push(L.marker([item['lat'], item['lng']]).bindPopup('<a href="../../browse/locations/' + item['slug'] + '">' + item['name'] + '</a>'));
         });
         var markerGroup = L.layerGroup(markers);
 

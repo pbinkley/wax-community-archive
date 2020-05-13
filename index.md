@@ -6,7 +6,7 @@ banner:
   y: 25%
   height: '200px'
 page_num: 1
-pagination_prefix: page
+pagination_prefix: browse/main/page
 ---
 
 It is not often that we can look around and recognize that an important historical event is unfolding before us. While the long-term impacts of the COVID-19 pandemic are still unknown to us, it is clear that the way we live, as Albertans, has been dramatically affected. So many of us are taking pictures and videos to document these strange times, but the platforms and places we store these artifacts are fallible and fleeting. 
