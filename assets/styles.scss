@@ -23,9 +23,38 @@ $thumbnail-width: 140px;
 
 $text-color:      #100c01;
 $bg-color:        #ffffff;
-$neutral:         #eae7de;
-$accent-light:    #966d09;
-$accent-dark:     #644906;
+$neutral:         #D4BA00;
+$accent-light:    #007C41;
+$accent-dark:     #284E36;
+
+/* Call to action button */
+.btn {
+  background:    #007c41;
+border-radius: 1000px;
+padding:       20px 45px;
+color:         #ffffff;
+display:       inline-block;
+font:          normal bold 26px/1 "Open Sans", sans-serif;
+text-align:    center;
+}
+
+.btn:hover {
+  background-color: #007C41;
+  color: white;
+  font:bold
+}
+
+.button {
+  background-color: #xxxxx;
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+}
 
 /* viewport sizes */
 
