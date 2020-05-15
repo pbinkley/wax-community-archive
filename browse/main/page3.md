@@ -1,23 +1,17 @@
 ---
 layout: page
-show_title: false
+show_title: true
 banner:
-  image: "/img/derivatives/iiif/images/19Y6JNH_Zhckqs2XdVgXe0v8z3UwSxmN0/full/full/0/default.jpg"
+  image: "/img/banner-playground_6512-sm.jpg"
   y: 25%
   height: 200px
 page_num: 3
 pagination_prefix: browse/main/page
+last_page: 4
 ---
 
-_Placeholder for text about the Alberta COVID-19 community archive project. Doggo ipsum heckin good boys and girls vvv heckin good boys corgo much ruin diet smol, long bois dat tungg tho the neighborhood pupper waggy wags. Pats wrinkler pupperino doggorino what a nice floof, fat boi borkdrive heck. Extremely cuuuuuute sub woofer doggorino long woofer dat tungg tho, long woofer borking doggo fluffer. Lotsa pats wrinkler long woofer h*ck, shooberino. Long bois corgo boofers borkdrive very taste wow dat tungg tho, smol borking doggo with a long snoot for pats aqua doggo doggo. What a nice floof sub woofer wow very biscit, super chub. Puggo I am bekom fat bork borkf porgo, length boy floofs noodle horse. Floofs heckin good boys and girls smol, many pats._
+It is not often that we see our world changing before our eyes, and recognize an important historical event is unfolding before us. The University of Alberta Library wants to collect and preserve the photos, videos and words that document these changes and the impact of the COVID-19 pandemic on Alberta for future generations. It could be a photo you sent your friend of the empty store shelves or the chalk art on your nightly walk around the block, all of these tell a story worth saving.
 
-_Invitation for people to contribute with links to the forms._ 
-
-### Browse the Collection by location
-
-{% include collection_gallery.html facet_by='location' collection='community_archive' %}
-
-
-
-
-
+<a href="https://forms.gle/X2KGaEPSj9VYGPEo8"><img src="img/button_contribute-your-story.png" alt="Contribute your story here"></a>
+### Scroll down to see what has already been shared
+{% include collection_gallery.html collection='community_archive' %}
