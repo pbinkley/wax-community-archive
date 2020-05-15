@@ -40,11 +40,17 @@ if page_count > 1
   index_md = File.read("#{JEKYLL_PATH}index.md")
   index_yaml, index_text = index_md.match(/\A\-\-\-\n(.+?)\n\-\-\-\n(.*)/m)[1..2]
 
-  # parse yaml header
   header = YAML.load(index_yaml)
+
+  # update last_page in index.md
+  header['last_page'] = page_count
+  write_md("#{JEKYLL_PATH}index.md", header, index_text)
+
+  # parse yaml header
   (2..page_count).each do |p|
     page_header = header.dup
     page_header['page_num'] = p
+    page_header['last_page'] = page_count
 
     write_md("#{JEKYLL_PATH}/browse/main/page#{p}.md", page_header, index_text)
 
@@ -88,6 +94,7 @@ places.each do |place|
   (2..page_count).each do |p|
     facet_yaml = yaml.dup
     facet_yaml['page_num'] = p
+    facet_yaml['last_page'] = page_count
 
     write_md("#{facet_dir}/page#{p}.md", facet_yaml, facet_text)
 

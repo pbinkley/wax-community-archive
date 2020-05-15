@@ -33,10 +33,12 @@
       {% endfor %}
     </div>
 
+    {% if page.page_num != page.last_page %}
     <p class="pagination">
       {% capture next_page %}{{ page.page_num | to_integer | plus: 1 }}{% endcapture %}
       <a class="pagination__next" href="{{ page.pagination_prefix | append: next_page | absolute_url }}/">Next page</a>
     </p>
+    {% endif %}
 
   </div>
 
