@@ -105,6 +105,8 @@ search:
 menu:
   - label: 'Contribute'
     link: '/contribute/'
+  - label: 'About'
+    link: '/about/'
   - label: 'Browse by Map'
     link: '/community_archive/map/'
   - label: 'Search'
@@ -121,12 +123,12 @@ footer:
   links:
     - label: 'About'
       link: '/about'
-    - label: 'Policies'
-      link: '/policies'
+    - label: 'Terms & Conditions'
+      link: '/terms'
     - label: 'Contact'
-      link: 'mailto:sarah.severson@ualberta.ca'
+      link: 'mailto:digitization@ualberta.ca'
   logos:
     - img: '/img/UA-LIBR-COLOUR.png'
-      link: 'https://https://www.library.ualberta.ca/'
+      link: 'https://www.library.ualberta.ca/'
 
 # FIN
